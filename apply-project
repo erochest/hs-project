@@ -1,0 +1,14 @@
+#!/bin/bash
+
+project_dir="$1"
+project=$(basename $project_dir)
+
+echo $project_dir
+echo $project
+
+cp .gitignore $project_dir/
+cp Guardfile $project_dir/
+cp ctags $project_dir/.git/hooks/ctags
+cp -r specs $project_dir/
+cat specs.cabal | sed -e "s/PROJECT/$project/g" >> $project_dir/*.cabal
+
