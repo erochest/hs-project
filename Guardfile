@@ -9,7 +9,7 @@ guard :shell do
 end
 
 guard :shell do
-  watch(/.*.hs$/) do
+  watch(/.*.l?hs$/) do
     system %{cabal-dev build}
     system %{./dist/build/#{PROJECT}-specs/#{PROJECT}-specs}
   end
