@@ -1,0 +1,2 @@
+rvm use @haskell
+PATH=$HOME/p/x/x-core/.cabal-sandbox/bin:$PATH
