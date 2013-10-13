@@ -6,10 +6,11 @@ project=$(basename $project_dir)
 echo $project_dir
 echo $project
 
-cat .-env | sed -e "s/PROJECTDIR/$project_dir/g" > $project_dir/.env
+cat .-env | sed -e "s,PROJECTDIR,\$HOME/p/$project,g" > $project_dir/.env
 cp .gitignore $project_dir/
 cp Guardfile $project_dir/
 cp ctags $project_dir/.git/hooks/ctags
 cp -r specs $project_dir/
 cat specs.cabal | sed -e "s/PROJECT/$project/g" >> $project_dir/*.cabal
+stylish-haskell --defaults > $project_dir/.stylish-haskell.yaml
 
