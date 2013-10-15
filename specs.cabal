@@ -5,7 +5,7 @@ test-suite PROJECT-specs
   hs-source-dirs:      specs
   main-is:             Specs.hs
   build-depends:         base       == 4.6.*
-                       , hspec      == 1.6.*
+                       , hspec      == 1.7.*
                        , QuickCheck == 2.6.*
 
 source-repository this
